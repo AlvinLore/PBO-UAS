@@ -7,6 +7,7 @@ package Controller;
 import Model.DatabaseRetriever;
 import Model.Permintaan;
 import Model.Pertemuan;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -83,8 +84,8 @@ public class FormController extends Form{
                 super.addErrorMessages("Hanya terdapat sesi 1,2,3, dan 4.");
                 break;
         }
-        if (permintaan.getTanggalSebelum().isAfter(permintaan.getTanggalSesudah())) {
-            super.addErrorMessages("Tanggal pergantian pertemuan harus lebih dari tanggal sebelumnya");
+        if (LocalDate.now().isAfter(permintaan.getTanggalSesudah())) {
+            super.addErrorMessages("Tanggal pergantian pertemuan harus lebih dari tanggal hari ini");
         }
         return super.getErrorMessages().isEmpty();
     }

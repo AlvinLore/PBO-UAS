@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author ASUS
  */
 public class DatabaseLogin {
-    private static final String URL = "jdbc:sqlite:D:/PBO/PBO UAS/Database/db_pergantian_ruangan";
+    private static final String URL = "jdbc:sqlite:Database/db_pergantian_ruangan";
     
     public static Connection getConnection() {
         try {
